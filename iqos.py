@@ -1,7 +1,15 @@
+import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
-PATH = "C:\Program Files (x86)\chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+op = webdriver.ChromeOptions()
+op.binary_location = os.environ.get("GOOGLE_CHROME_BIH")
+op.add_argument("--headless")
+op.add_argument("--no-sandbox")
+op.add_argument("--disable-dev-sh-usage")
+
+# PATH = "C:\Program Files (x86)\chromedriver.exe"
+# driver = webdriver.Chrome(PATH)
+driver = webdriver.Chrome(executable_path= os.environ.get("CHROMEDRIVER_PATH"), chrome_options=op)
 driver.set_window_size(1024, 600)
 driver.maximize_window()
 driver.implicitly_wait(3) # seconds
