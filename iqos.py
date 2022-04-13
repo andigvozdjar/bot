@@ -30,7 +30,7 @@ driver.find_element(By.CSS_SELECTOR, value="input.nbw-input-field[name='loginMet
 driver.find_element(By.CSS_SELECTOR, value="input.nbw-input-password[name='loginMethodInput']").send_keys("Toshiba15")
 driver.find_element(By.CSS_SELECTOR, value="input.nbw-input-password[name='loginMethodInput']").send_keys(Keys.ENTER)
 
-ignoreTitle = ['Ulaznice za online predstavu "Zlatni lančić od bižuterije"', 'Pristup Arena Cloud kanalima 2022', 'ulaznice za koncert Nina Badrić / Ana Rucner']
+ignoreTitle = ['Ulaznice za online predstavu "Zlatni lančić od bižuterije"', 'Pristup Arena Coud kanalima 2022', 'ulaznice za koncert Nina Badrić / Ana Rucner']
 reload = True
 
 time.sleep(1)
@@ -64,7 +64,7 @@ while reload:
       toaster.show_toast(eventName,"NAGRADA", threaded=True)
       while toaster.notification_active(): time.sleep(0.1)
       time.sleep(1)
-      driver.save_screenshot("screenshot.png")
+      driver.save_screenshot("event-"+eventName+".png")
     else:
       time.sleep(2)
     
